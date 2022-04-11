@@ -17,6 +17,9 @@ public interface UserDao {
     @Query("select * from User where email=:email and password=:password")
     User getUser(String email, String password);
 
+    @Query("select * from User where email=:email")
+    User getCurrentUser(String email);
+
     @Insert
     long insert(User user);  // Insert query returns long rowId. If sucessful, returns >0 else returns -1.
 

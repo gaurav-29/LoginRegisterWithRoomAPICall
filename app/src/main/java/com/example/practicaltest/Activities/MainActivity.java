@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(context, R.layout.activity_main);
 
+
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = new PostFragment();
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();

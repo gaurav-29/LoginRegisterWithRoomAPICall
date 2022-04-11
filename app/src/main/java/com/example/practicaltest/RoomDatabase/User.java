@@ -13,17 +13,20 @@ public class User implements Serializable { // By implementing this interface, w
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
-    private String userName;
-    private String password;
+    private String firstName;
+    private String lastName;
     private String email ;
+    private String phone ;
+    private String password;
 
-    public User(String userName, String password, String email) {
-        this.userName = userName;
-        this.password = password;
+    public User(String firstName, String lastName, String email, String phone, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
+        this.phone = phone;
+        this.password = password;
     }
 
-    @NonNull
     public int getId() {
         return id;
     }
@@ -32,20 +35,20 @@ public class User implements Serializable { // By implementing this interface, w
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -56,13 +59,31 @@ public class User implements Serializable { // By implementing this interface, w
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
